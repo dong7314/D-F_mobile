@@ -5,6 +5,10 @@
 /* font-family: 'Noto Sans KR', sans-serif; */
 /* font-family: 'NexonLv2Gothic'; */
 
+ul, ol, li {
+  list-style: none;
+}
+
 /* top-gnb area */
 #top-gnb {
   display: flex;
@@ -152,4 +156,180 @@
   background: #07F;
   border: 2px solid #07F;
   color: white;
+}
+
+/* sidebar area */
+#sidebar {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: calc( 100vh - 62px );
+  background-color: #222222;
+}
+
+#sidebar ul li {
+  width: 100%;
+  border-bottom: 1px solid #2f2e2e;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#sidebar ul li:nth-child(1) {
+  width: 100%;
+  min-height: 147px;
+  margin: 33px auto 0;
+}
+
+#sidebar ul li:nth-child(1) a span {
+  display: block;
+  width: 100%;
+}
+
+#sidebar ul li:nth-child(1) a span.txt {
+  display: block;
+  color: #6e6e6e;
+  font-size: 15px;
+  letter-spacing: -1px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 8px;
+}
+
+#sidebar ul li:nth-child(1) a span.txt:after {
+  content: '';
+  display: inline-block;
+  background-image: url('../img/ico_arrow.png');
+  background-size: cover;
+  vertical-align: middle;
+  width: 8px;
+  height: 11px;
+  margin: -2px 0 0 5px;
+}
+
+#sidebar ul li:nth-child(1) a span img {
+  display: block;
+  width: 176px;
+  margin: 0 auto;
+}
+
+#sidebar ul li:nth-child(2) {
+  height: 176px;
+  padding: 18px 18px 0 14px;
+  box-sizing: border-box;
+  border-left: 4px solid #b71c08;
+}
+
+#sidebar ul li:nth-child(2) a span.txt {
+  display: inline-block;
+  width: 184px;
+  padding: 10px 0 15px;
+  color: #b5b5b5;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+
+#sidebar ul li:nth-child(2) a span.txt b {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#sidebar ul li:nth-child(2) a span.img {
+  display: block;
+  width: 184px;
+  height: 94px;
+  background-image: url('../img/nav/spr_nav1.png');
+  background-position: 100% 0;
+  background-size: auto;
+}
+
+#sidebar ul li:nth-child(3) {
+  margin-top: 1px;
+  height: 176px;
+  padding: 18px 18px 0 14px;
+  box-sizing: border-box;
+  border-left: 4px solid #5e5e5e;
+}
+
+#sidebar ul li:nth-child(3) a span.txt {
+  display: inline-block;
+  width: 184px;
+  padding: 10px 0 15px;
+  color: #7e7e7e;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+
+#sidebar ul li:nth-child(3) a span.txt b {
+  color: #7e7e7e;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#sidebar ul li:nth-child(3) a span.img {
+  display: block;
+  width: 184px;
+  height: 94px;
+  background-image: url('../img/nav/spr_nav1.png');
+  background-position: 0 -94px;
+  background-size: auto;
+}
+
+#sidebar ul li:nth-child(3) a:hover span.img {
+  background-position: 100% -94px;
+}
+
+#sidebar ul li:nth-child(3) a:hover span.txt {
+  color: #b5b5b5;
+}
+
+#sidebar ul li:nth-child(3) a:hover span.txt b {
+  color: white;
+}
+
+#sidebar ul li:nth-child(4) {
+  position: relative;
+  height: calc( 100vh - 595px );
+  border-bottom: none;
+}
+
+#sidebar ul li:nth-child(4) .util {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: 184px;
+  height: 206px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+#sidebar ul li:nth-child(4) .util .age12, #sidebar ul li:nth-child(4) .util .age18 {
+  display: inline-block;
+  width: 50%;
+  height: 38px;
+  text-indent: 0;
+  font-size: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #818181;
+  box-sizing: border-box;
+  border: 1px solid #333333;
+  background-image: none;
+  background-color: #222222;
+}
+
+#sidebar ul li:nth-child(4) .util .age12 {
+  background-color: #333333;
+}
+
+#sidebar ul li:nth-child(4) .util a {
+  display: block;
+  margin-top: 12px;
+  width: 184px;
+  height: 57px;
 }
