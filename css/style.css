@@ -1155,7 +1155,7 @@ a {
 }
 
 #section1 .btn1_1:hover, #section1 .btn1_2:hover {
-  background-position-x: -1170px
+  background-position-x: -1170px;
 }
 
 /* section2 */
@@ -1190,7 +1190,12 @@ a {
   top: -219px;
   width: 1983px;
   height: 1935px;
-  background: url('../img/section2/cha2_3_off.png');
+  z-index: 1;
+  cursor: pointer;
+}
+
+#section2 .cha2_3 img[alt=cha2_3_on] {
+  display: none;
 }
 
 #section2 .cha2_2 {
@@ -1200,13 +1205,15 @@ a {
   top: 241px;
   width: 1251px;
   height: 1661px;
-  background: url('../img/section2/cha2_2_on.png');
+  z-index: 2;
+  cursor: pointer;
 }
 
 #section2 .ct2 {
   position: absolute;
   left: 50%;
   background: url('../img/section2/contents2.png');
+  z-index: 3;
 }
 
 #section2 .ctit2 .ct2_1 {
@@ -1251,12 +1258,25 @@ a {
   height: 360px;
   background: url('../img/section2/bg_frame2.png');
   background-size: cover;
+  z-index: 3;
+}
+
+#section2 .black-wrap {
+  position: absolute;
+  top: 30px;
+  left: 37px;
+  z-index: 3;
+  background: black;
+  width: 565px;
+  height: 318.5px;
+  z-index: 2;
 }
 
 #section2 .frame {
   position: absolute;
   top: 30px;
   left: 37px;
+  z-index: 3;
 }
 
 #section2 .btn2_1 {
@@ -1269,6 +1289,7 @@ a {
   height: 154px;
   background: url('../img/button.png');
   background-position: 0 -1223px;
+  z-index: 3;
 }
 
 #section2 .btn2_1:hover {
@@ -2257,8 +2278,194 @@ a {
 }
 
 /* section1 */
+#section1 .cha1 {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: 1s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
 
+#section1.active .cha1 {
+  opacity: 1;
+  transform: translateX(0);
+}
 
+#section1 .lightning {
+  opacity: 0;
+  transition: 1s;
+  transition-timing-function: ease;
+}
+
+#section1.active .lightning {
+  opacity: 1;
+}
+
+#section1 .ct1_1 {
+  opacity: 0;
+  transform: translateX(100px) scale(1.2);
+  transition: 1s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section1.active .ct1_1 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ct1_2 {
+  opacity: 0;
+  transform: translateX(-100px) scale(1.2);
+  transition: 1s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section1.active .ct1_2 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ct1_3 {
+  opacity: 0;
+  transition: 1s;
+  transition-timing-function : ease;
+}
+
+#section1.active .ct1_3 {
+  opacity: 1;
+}
+
+#section1 .player1 {
+  opacity: 0;
+  transform: scale(.8);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: .3s;
+}
+
+#section1.active .player1 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#section1 .ctxt_1 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.95);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: .3s;
+}
+
+#section1.active .ctxt_1 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ctxt_2 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.95);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: .5s;
+}
+
+#section1.active .ctxt_2 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ctxt_3 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.95);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: .7s;
+}
+
+#section1.active .ctxt_3 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ctxt_4 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.95);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: .9s;
+}
+
+#section1.active .ctxt_4 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .ctxt_5 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.95);
+  transition: 1s;
+  transition-timing-function : ease;
+  transition-delay: 1s;
+}
+
+#section1.active .ctxt_5 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .btn1_1 {
+  opacity: 0;
+  transform: translateX(10px) scale(.8);
+  transition: 1s;
+  transition-property: opacity, transform;
+  transition-timing-function : ease;
+  transition-delay: .3s;
+}
+
+#section1.active .btn1_1 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#section1 .btn1_2 {
+  opacity: 0;
+  transform: translateX(-10px) scale(.8);
+  transition: 1s;
+  transition-property: opacity, transform;
+  transition-timing-function : ease;
+  transition-delay: .3s;
+}
+
+#section1.active .btn1_2 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* section2 */
+
+#section2 .cha2_1 {
+  opacity: 0;
+  transform: translate(-200px, -200px);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0,.97,.35,1.15);
+}
+
+#section2.active .cha2_1 {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+#section2 .cha2_2 {
+  opacity: 0;
+  transform: translate(-400px, 200px);
+  transition-duration: 1s;
+  transition-delay: .1s;
+  transition-timing-function: cubic-bezier(0,.97,.35,1.15);
+}
+
+#section2.active .cha2_2 {
+  opacity: 1;
+  transform: translate(0, 0);
+}
 
 /* footer area */
 #footer {
