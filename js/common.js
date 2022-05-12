@@ -1,5 +1,16 @@
 $(function(){
-  // meseege-btn
+  // back to top btn
+  $(window).scroll(function(){
+    // console.log(this);
+    let backToTop = $('.back-to-top');
+    if ( $(this).scrollTop() != 0 ) {
+      backToTop.addClass('on');
+    } else {
+      backToTop.removeClass('on');
+    }
+  });
+
+  // messege-btn
   $('.messege-btn').click(function(){
     if ( $(this).hasClass('changed') ) {
       $(this).animate({
@@ -43,6 +54,20 @@ $(function(){
     $(this).toggleClass('changed');
   });
 
+  // messege-btn display flex
+  $(window).scroll(function(){
+    let winScroll = $(this).scrollTop();
+    if ( winScroll >= 62 ) {
+      $('.messege-btn').css('position', 'fixed').css('top', '0');
+      $('#sidebar').css('position', 'fixed').css('height', '100vh');
+      $('#sidebar ul li:nth-child(4)').css('height', 'calc( 100vh - 533px )');
+    } else {
+      $('.messege-btn').css('position', 'absolute').css('top', '62px');
+      $('#sidebar').css('position', 'relative').css('height', 'calc( 100vh - 62px )');
+      $('#sidebar ul li:nth-child(4)').css('height', 'calc( 100vh - 595px )');
+    }
+  });
+
   // sidebar hover 시 border-left 속성 변경
   $('#sidebar ul li:nth-child(3) a').hover(function(){
     $(this).parent().css('border-left', '4px solid #b71c08');
@@ -57,4 +82,43 @@ $(function(){
     $(this).find('div').css('opacity', '0');
   });
 
+  // quick btn animation
+  $('.quick ul li a, .back-to-top, #section0 > ul li a').click(function(){
+    let thisHash = $(this.hash);
+    let isAni = $('html,body').is(':animated');
+    if ( !isAni ) {
+      $('html,body').animate({ scrollTop : thisHash.offset().top }, 600, 'swing');
+    }
+    return false;
+  });
+
+  // animation
+  $(window).scroll(function(){
+    let winScroll = $(this).scrollTop();
+    $('section').each(function(){
+      let secOffset = $(this).offset().top;
+      let secHeight = $(this).height();
+      if ( winScroll >= secOffset && winScroll < secOffset + secHeight ) {
+        $(this).addClass('active');
+      } else {
+        $(this).removeClass('active');
+      }
+    });
+  });
+  // section0
+  // section1 lightning
+  let lightTime = setInterval(function(){
+    $('#section1 .lightning .lt').each(function(){
+      console.log(this);
+      let lightningNum = $(this);
+      let randomTime = setInterval(function(){
+        let randomNum = Math.random();
+        lightningNum.css('transform', `skew(${randomNum}deg, ${randomNum}deg)`).css('opacity', `${randomNum}`);
+      }, 10);
+      setTimeout(function(){
+        clearInterval(randomTime);
+        lightningNum.css('opacity', 0).css('transform', 'skew(0)');
+      }, 1000);
+    });
+  }, 4000);
 });

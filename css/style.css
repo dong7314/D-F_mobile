@@ -5,6 +5,20 @@
 /* font-family: 'Noto Sans KR', sans-serif; */
 /* font-family: 'NexonLv2Gothic'; */
 
+@keyframes lightEffect {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(.4);
+    opacity: 0;
+  }
+}
+
 ul, ol, li {
   list-style: none;
 }
@@ -19,6 +33,31 @@ a {
 
 #header {
   height: 62px;
+}
+
+.back-to-top {
+  display: block;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #232323;
+  z-index: 0;
+  opacity: 0;
+  transition: .2s;
+}
+
+.back-to-top.on {
+  opacity: 1;
+  z-index: 100;
+}
+
+.back-to-top .bg-back {
+  width: 100%;
+  height: 100%;
+  background: url('../img/button.png');
+  background-position: -1248px -1223px;
 }
 
 /* top-gnb area */
@@ -181,6 +220,7 @@ a {
   background-color: #222222;
   margin-left: -220px;
   z-index: 500;
+  transition: height .1s ease;
 }
 
 #sidebar ul li {
@@ -208,6 +248,10 @@ a {
   font-weight: 500;
   text-align: center;
   padding-top: 8px;
+}
+
+#sidebar ul li:nth-child(1) a:hover span.txt {
+  color: #b5b5b5;
 }
 
 #sidebar ul li:nth-child(1) a span.txt:after {
@@ -310,6 +354,7 @@ a {
   position: relative;
   height: calc( 100vh - 595px );
   border-bottom: none;
+  transition: height .1s ease;
 }
 
 #sidebar ul li:nth-child(4) .util {
@@ -335,6 +380,10 @@ a {
   border: 1px solid #333333;
   background-image: none;
   background-color: #222222;
+}
+
+#sidebar ul li:nth-child(4) .util .age18 {
+  color: #b5b5b5;
 }
 
 #sidebar ul li:nth-child(4) .util .age12 {
@@ -371,12 +420,12 @@ a {
   color: #8a8a8a;
   margin-left: 18px;
   margin-top: 13px;
+  opacity: 1;
+  transition: .4s;
 }
 
-
-
 .messege-btn.changed:before {
-  display: none;
+  opacity: 0;
 }
 
 .messege-btn span {
@@ -403,6 +452,7 @@ a {
   top: 72px;
   right: 0;
   width: 477px;
+  z-index: 100;
 }
 
 .util-top-btn ul li {
@@ -707,6 +757,7 @@ a {
 }
 
 #section0 h2 .legs .leg1 {
+  overflow: hidden;
   left: 12px;
   top: 160px;
   width: 246px;
@@ -767,6 +818,8 @@ a {
   top: 265px;
   width: 100%;
   height: 86px;
+  opacity: 0;
+  transform: scaleX(.4);
   background-position: center -770px;
 }
 
@@ -937,6 +990,7 @@ a {
   width: 420px;
   height: 546px;
   background: url('../img/section1/lightning1.png');
+  opacity: 0;
 }
 
 #section1 .lightning .lightning2 {
@@ -947,6 +1001,7 @@ a {
   width: 798px;
   height: 618px;
   background: url('../img/section1/lightning2.png');
+  opacity: 0;
 }
 
 #section1 .lightning .lightning3 {
@@ -957,6 +1012,7 @@ a {
   width: 597px;
   height: 705px;
   background: url('../img/section1/lightning3.png');
+  opacity: 0;
 }
 
 #section1 .cha1 {
@@ -1904,6 +1960,305 @@ a {
   height: 32px;
   background-position: 0px -212px;
 }
+
+/* section animation area */
+/* section0 */
+
+#section0 .cha0_2 {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .cha0_2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#section0 .cha0 {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .cha0 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#section0 .effect0 {
+  opacity: 0;
+  transform: scale(1.4);
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .effect0 {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt1 {
+  opacity: 0;
+  transform: translateX(300px) scale(.6);
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt1 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt2 {
+  opacity: 0;
+  transform: translateX(200px) scale(.6);
+  transition: 1.8s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt2 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt3 {
+  opacity: 0;
+  transform: translateX(100px) scale(.6);
+  transition: 1.6s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt3 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt4 {
+  opacity: 0;
+  transform: translateX(-100px) scale(.6);
+  transition: 1.6s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt4 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt5 {
+  opacity: 0;
+  transform: translateX(-200px) scale(.6);
+  transition: 1.8s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt5 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .mtit .mt6 {
+  opacity: 0;
+  transform: translateX(-300px) scale(.6);
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .mtit .mt6 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+#section0 .m_line {
+  transform: scaleX(.2);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .m_line {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+#section0 .eng {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+}
+
+#section0.active .eng {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#section0 h2 .legs .leg1 {
+  top: 232px;
+  height: 0px;
+  background-position: right -614px;
+  transition: .2s;
+  transition-timing-function : linear;
+}
+
+#section0.active h2 .legs .leg1 {
+  top: 160px;
+  height: 72px;
+  background-position: right -542px;
+}
+
+#section0 h2 .legs .leg2 {
+  top: 160px;
+  height: 0px;
+  background-position: right -1000px;
+  transition: .2s;
+  transition-timing-function: linear;
+  transition-delay: .2s;
+}
+
+#section0.active h2 .legs .leg2 {
+  top: 88px;
+  height: 72px;
+  background-position: right -928px;
+}
+
+#section0 h2 .legs .leg3 {
+  top: 84px;
+  height: 0px;
+  background-position: 0 -414px;
+  transition: .2s;
+  transition-timing-function: linear;
+  transition-delay: .4s;
+}
+
+#section0.active h2 .legs .leg3 {
+  top: 0px;
+  height: 84px;
+  background-position: 0 -330px;
+}
+
+#section0 h2 .legs .leg4 {
+  top: 232px;
+  height: 0px;
+  background-position: 0 -614px;
+  transition: .2s;
+  transition-timing-function : linear;
+}
+
+#section0.active h2 .legs .leg4 {
+  top: 160px;
+  height: 72px;
+  background-position: 0 -542px;
+}
+
+#section0 h2 .legs .leg5 {
+  top: 160px;
+  height: 0px;
+  background-position: 0 -1000px;
+  transition: .2s;
+  transition-timing-function: linear;
+  transition-delay: .2s;
+}
+
+#section0.active h2 .legs .leg5 {
+  top: 88px;
+  height: 72px;
+  background-position: 0 -928px;
+}
+
+#section0 h2 .legs .leg6 {
+  top: 84px;
+  height: 0px;
+  background-position: right -414px;
+  transition: .2s;
+  transition-timing-function: linear;
+  transition-delay: .4s;
+}
+
+#section0.active h2 .legs .leg6 {
+  top: 0px;
+  height: 84px;
+  background-position: right -330px;
+}
+
+#section0 .stit .st1 {
+  transform: scale(1.4);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+  transition-delay: .6s;
+}
+
+#section0.active .stit .st1 {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#section0.active .stit .st2 {
+  animation-name: lightEffect;
+  animation-delay: 1.1s;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+}
+
+#section0 .stit .st3 {
+  transform: scale(1.4);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+  transition-delay: 1.1s;
+}
+
+#section0.active .stit .st3 {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#section0 > ul li.line-first {
+  transform: translateY(100px) scale(.5);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+  transition-delay: 1.3s;
+}
+
+#section0.active > ul li.line-first {
+  transform: scaleY(1) scale(1);
+  opacity: 1;
+}
+
+#section0 > ul li.line-second {
+  transform: translateY(-100px) scale(.5);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+  transition-delay: 1.3s;
+}
+
+#section0.active > ul li.line-second {
+  transform: scaleY(1) scale(1);
+  opacity: 1;
+}
+
+#section0 .scroll-image {
+  transform: scale(.5);
+  opacity: 0;
+  transition: 2s;
+  transition-timing-function : cubic-bezier(0,.34,0,1.05);
+  transition-delay: 1.3s;
+}
+
+#section0.active .scroll-image {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* section1 */
+
+
 
 /* footer area */
 #footer {
