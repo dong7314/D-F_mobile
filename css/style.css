@@ -209,16 +209,40 @@ a {
   color: white;
 }
 
+/* lgnb wrapper */
+#lgnb-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: -1;
+  opacity: 0;
+  transition: .3s;
+}
+
+#lgnb-wrapper.on {
+  opacity: 1;
+  z-index: 550;
+}
+
 /* lgnb area */
 #lgnb {
   position: absolute;
   display: block;
   top: 0;
   left: 0;
+  margin-left: -440px;
   width: 440px;
   height: 100vh;
   background: white;
   z-index: 600;
+  opacity: 0;
+  transition: .3s;
+}
+
+#lgnb.on {
+  opacity: 1;
+  margin-left: 0;
 }
 
 #lgnb .lgnb-top {
@@ -257,7 +281,7 @@ a {
   top: 31px;
   background: black;
   transform: rotate(-45deg);
-  transition: .5s;
+  transition: .2s linear;
 }
 
 #lgnb .lgnb-top a:hover span:nth-child(1) {
@@ -268,56 +292,270 @@ a {
   background: #0077FF;
 }
 
-#lgnb .lgnb-main-wrap {
-  overflow: hidden;
-  height: 678px;
-}
-
 #lgnb .lgnb-main {
-  height: 781px;
+  height: calc( 100vh - 257px );
 }
 
-#lgnb .lgnb-main .lgnb-header {
+#lgnb .lgnb-main .lgnb-main-wrap {
+  height: calc( 100% - 75px );
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+#lgnb .lgnb-main .lgnb-main-wrap .lgnb-section {
+  height: 781px;
+  padding: 0 0 50px 42px;
+  box-sizing: border-box;
+}
+
+#lgnb .lgnb-header {
+  position: relative;
   height: 75px;
   padding-top: 27px;
+  box-sizing: border-box;
 }
 
-#lgnb .lgnb-main .lgnb-header ul {
+#lgnb .lgnb-header ul {
   height: 29px;
   padding: 9px 0 0 42px;
   box-sizing: border-box;
   overflow: hidden;
   font-family: 'NexonLv2Gothic';
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 500;
 }
 
-#lgnb .lgnb-main .lgnb-header ul li {
+#lgnb .lgnb-header ul li {
   height: 100%;
   box-sizing: border-box;
 }
 
-#lgnb .lgnb-main .lgnb-header ul li a {
+#lgnb .lgnb-header ul li a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-#lgnb .lgnb-main .lgnb-header ul li:nth-child(1) {
+#lgnb .lgnb-header ul li:nth-child(1) {
   float: left;
   margin-right: 20px;
   border-bottom: 2px solid black;
 }
 
-#lgnb .lgnb-main .lgnb-header ul li:nth-child(2) {
+#lgnb .lgnb-header ul li:nth-child(2) {
   float: left;
   margin-right: 20px;
   color: #9fa1a7;
-  transition: .3s;
+  transition: .2s linear;
 }
 
-#lgnb .lgnb-main .lgnb-header ul li:hover:nth-child(2) {
+#lgnb .lgnb-header ul li:hover:nth-child(2) {
   color: #0077FF;
+}
+
+#lgnb .lgnb-header > a {
+  position: absolute;
+  display: inline-block;
+  top: 28px;
+  right: 40px;
+  width: 80px;
+  height: 32px;
+  color: #9fa1a7;
+  border: 2px solid #9fa1a7;
+  text-align: center;
+  padding-top: 8px;
+  box-sizing: border-box;
+  font-family: 'NexonLv2Gothic';
+  font-size: 13px;
+  font-weight: 500;
+  transition: .2s linear;
+}
+
+#lgnb .lgnb-header > a:hover {
+  background: #9fa1a7;
+  color: white;
+}
+
+#lgnb .lgnb-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#lgnb .lgnb-section ul {
+  width: 188px;
+}
+
+#lgnb .lgnb-section ul li {
+  display: inline-block;
+  width: 188px;
+  height: 24px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+}
+
+#lgnb .lgnb-section ul li a {
+  font-family: 'NexonLv2Gothic';
+  font-size: 12px;
+  font-weight: 400;
+  color: #737881;
+  vertical-align: top;
+  transition: .2s linear;
+}
+
+#lgnb .lgnb-section ul:not(.eng) li {
+  height: 22px;
+  font-size: 13px;
+}
+
+#lgnb .lgnb-section ul:not(.eng) li a {
+  font-size: 13px;
+}
+
+#lgnb .lgnb-section ul li:first-child {
+  width: 188px;
+  height: 50px;
+  padding-top: 24px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  font-family: 'NexonLv2Gothic';
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#lgnb .lgnb-section ul li a:hover {
+  color: #0077FF;
+}
+
+#lgnb .side-service {
+  height: 145px;
+  padding: 30px 0 0 33px;
+  box-sizing: border-box;
+  background: #222426;
+}
+
+#lgnb .side-service ul {
+  overflow: hidden;
+}
+
+#lgnb .side-service ul li {
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 35px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+#lgnb ul li .side-hover-box {
+  display: inline-block;
+  height: 21px;
+}
+
+#lgnb ul li .side-hover-box:hover span {
+  opacity: 0;
+}
+
+#lgnb ul li .side-hover-box:hover div {
+  opacity: 1;
+}
+
+#lgnb ul li .side-hover-box:hover a {
+  color: #0077FF;
+}
+
+#lgnb .side-service ul li a {
+  float: left;
+  display: inline-block;
+  height: 16px;
+  font-family: 'NexonLv2Gothic';
+  font-size: 13px;
+  font-weight: 400;
+  color: white;
+  margin-top: 3px;
+  margin-left: 4px;
+  box-sizing: border-box;
+  transition: .2s linear;
+}
+
+#lgnb .side-service ul li span {
+  float: left;
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  background: url('../img/icon/set_service.png');
+  background-position-x: 0;
+  transition: .2s linear;
+  opacity: 1;
+}
+
+#lgnb .side-service ul li .hover-img {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 15px;
+  width: 18px;
+  height: 16px;
+  background: url('../img/icon/set_service.png');
+  background-position-x: -50px;
+  transition: .2s linear;
+  opacity: 0;
+}
+
+#lgnb .side-service ul li:nth-child(1) span, #lgnb .side-service ul li:nth-child(1) .hover-img {
+  background-position-y: 0;
+}
+
+#lgnb .side-service ul li:nth-child(2) span, #lgnb .side-service ul li:nth-child(2) .hover-img {
+  background-position-y: -50px;
+}
+
+#lgnb .side-service ul li:nth-child(3) span, #lgnb .side-service ul li:nth-child(3) .hover-img {
+  background-position-y: -100px;
+}
+
+#lgnb .side-service ul li:nth-child(4) span, #lgnb .side-service ul li:nth-child(4) .hover-img {
+  background-position-y: -150px;
+}
+
+#lgnb .side-service ul li:nth-child(5) span, #lgnb .side-service ul li:nth-child(5) .hover-img {
+  background-position-y: -200px;
+}
+
+#lgnb .side-service ul li:nth-child(6) span, #lgnb .side-service ul li:nth-child(6) .hover-img {
+  background-position-y: -400px;
+}
+
+#lgnb .side-service ul li:nth-child(7) span, #lgnb .side-service ul li:nth-child(7) .hover-img {
+  background-position-y: -300px;
+}
+
+#lgnb .side-service ul li:nth-child(8) span, #lgnb .side-service ul li:nth-child(8) .hover-img {
+  background-position-y: -350px;
+}
+
+#lgnb .side-service ul li:nth-child(9) span, #lgnb .side-service ul li:nth-child(9) .hover-img {
+  background-position-y: -250px;
+}
+
+#lgnb .all-service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: #17191d;
+  color: white;
+  font-family: 'NexonLv2Gothic';
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: .2s linear;
+}
+
+#lgnb .all-service:hover {
+  background: #0077EE;
 }
 
 /* sidebar area */
