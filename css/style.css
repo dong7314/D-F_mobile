@@ -366,20 +366,37 @@ a {
   display: block;
   width: 100%;
   height: 100%;
+  color: #9fa1a7;
   transition: color .2s linear;
+}
+
+#lgnb .lgnb-header ul li a:hover {
+  color: #0077ff;
+}
+
+#lgnb .lgnb-header ul li.on {
+  border-bottom: 2px solid black;
+}
+
+#lgnb .lgnb-header ul li.on a {
+  color: black;
+}
+
+#lgnb .lgnb-header ul li.on a:hover {
+  color: black;
 }
 
 #lgnb .lgnb-header ul li:nth-child(1) {
   float: left;
   margin-right: 20px;
-  border-bottom: 2px solid black;
 }
 
 #lgnb .lgnb-header ul li:nth-child(2) {
   float: left;
   margin-right: 20px;
-  color: #9fa1a7;
 }
+
+
 
 #lgnb .lgnb-header > a {
   position: absolute;
@@ -1827,6 +1844,11 @@ main {
   position: absolute;
   bottom: 8px;
   left: 8px;
+  transition: opacity .3s linear;
+}
+
+#section3 .swiper-slide img:nth-child(2) {
+  opacity: 0;
 }
 
 #section3 .swiper-slide .next {
@@ -1835,10 +1857,12 @@ main {
   width: 43px;
   height: 76px;
   bottom: 129.5px;
-  right: 7.5px;
+  right: 6px;
   border: none;
   background: url('../img/button.png');
-  background-position: -756px -424px;
+  background-position-x: -756px;
+  background-position-y: -424px;
+  cursor: pointer;
 }
 
 #section3 .swiper-slide .prev {
@@ -1847,10 +1871,12 @@ main {
   width: 43px;
   height: 76px;
   bottom: 129.5px;
-  left: 7px;
+  left: 6px;
   border: none;
   background: url('../img/button.png');
-  background-position: -670px -424px;
+  background-position-x: -670px;
+  background-position-y: -304px;
+  cursor: pointer;
 }
 
 #section3 .btn3_1 {

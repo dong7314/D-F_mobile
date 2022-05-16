@@ -23,31 +23,17 @@ $(function(){
     $('html').css('overflow', 'auto');
   });
 
-  $('.lgnb-header ul li a').hover(function(){
-    if ( $(this).css('color') == 'rgb(159, 161, 167)' ) {
-      $(this).css('color', '#0077FF');
-    }
-  }, function(){
-    if ( $(this).css('color') != 'rgb(0, 0, 0)' ) {
-      $(this).css('color', 'rgb(159, 161, 167)');
-    }
-  });
-
   $('.lgnb-header ul li:nth-child(2) a').click(function(){
-    $('.lgnb-header ul li:nth-child(2) a').css('color', 'rgb(0, 0, 0)');
-    $('.lgnb-header ul li:nth-child(1) a').css('color', 'rgb(159, 161, 167)');
-    $('.lgnb-header ul li:nth-child(2)').css('border-bottom', '2px solid black');
-    $('.lgnb-header ul li:nth-child(1)').css('border-bottom', 'none');
+    $('.lgnb-header ul li:nth-child(2)').addClass('on');
+    $('.lgnb-header ul li:nth-child(1)').removeClass('on');
     $('.mobile').css('display', 'flex');
     $('.pc').css('display', 'none');
     $('.scrollbar').css('display', 'none');
   });
 
   $('.lgnb-header ul li:nth-child(1) a').click(function(){
-    $('.lgnb-header ul li:nth-child(1) a').css('color', 'rgb(0, 0, 0)');
-    $('.lgnb-header ul li:nth-child(2) a').css('color', 'rgb(159, 161, 167)');
-    $('.lgnb-header ul li:nth-child(1)').css('border-bottom', '2px solid black');
-    $('.lgnb-header ul li:nth-child(2)').css('border-bottom', 'none');
+    $('.lgnb-header ul li:nth-child(1)').addClass('on');
+    $('.lgnb-header ul li:nth-child(2)').removeClass('on');
     $('.mobile').css('display', 'none');
     $('.pc').css('display', 'flex');
     $('.scrollbar').css('display', 'block');
@@ -218,7 +204,20 @@ $(function(){
     }
   });
 
-  // section3 
+  // section3
+  $('#section3 .swiper-slide .next').click(function(){
+    $(this).parent().find('img:nth-of-type(1)').css('opacity', '0');
+    $(this).parent().find('img:nth-of-type(2)').css('opacity', '1');
+    $(this).css('background-position-y', '-304px');
+    $(this).parent().find('button:nth-of-type(2)').css('background-position-y', '-424px');
+  });
+  $('#section3 .swiper-slide .prev').click(function(){
+    $(this).parent().find('img:nth-child(2)').css('opacity', '0');
+    $(this).parent().find('img:nth-child(1)').css('opacity', '1');
+    $(this).css('background-position-y', '-304px');
+    $(this).parent().find('button:nth-of-type(1)').css('background-position-y', '-424px');
+  });
+
 
 
 });
