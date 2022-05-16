@@ -296,6 +296,29 @@ a {
   height: calc( 100vh - 257px );
 }
 
+#lgnb .lgnb-main .lgnb-scrollbar {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  width: 10%;
+  height: calc( 100vh - 257px );
+  background: white;
+}
+
+#lgnb .lgnb-main .lgnb-scrollbar .scrollbar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 6px;
+  height: 100%;
+  background: rgba(0, 0, 0, .11);
+  border-radius: 3px;
+  transition: top .05s linear;
+  transition: opacity .15s linear;
+  opacity: 0;
+
+}
+
 #lgnb .lgnb-main .lgnb-main-wrap {
   height: calc( 100% - 75px );
   overflow-y: scroll;
@@ -306,6 +329,15 @@ a {
   height: 781px;
   padding: 0 0 50px 42px;
   box-sizing: border-box;
+}
+
+#lgnb .lgnb-main .lgnb-main-wrap .lgnb-section.pc {
+  display: flex;
+}
+
+#lgnb .lgnb-main .lgnb-main-wrap .lgnb-section.mobile {
+  display: none;
+  height: 589px;
 }
 
 #lgnb .lgnb-header {
@@ -334,6 +366,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
+  transition: color .2s linear;
 }
 
 #lgnb .lgnb-header ul li:nth-child(1) {
@@ -346,11 +379,6 @@ a {
   float: left;
   margin-right: 20px;
   color: #9fa1a7;
-  transition: .2s linear;
-}
-
-#lgnb .lgnb-header ul li:hover:nth-child(2) {
-  color: #0077FF;
 }
 
 #lgnb .lgnb-header > a {
