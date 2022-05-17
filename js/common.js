@@ -62,7 +62,6 @@ $(function(){
     $('.lgnb-scrollbar .scrollbar').css('top',  `${5+(lmainscrollTop/heightRate)*(scrollbarHeight*(1-scrollbarRate))}px`);
   });
 
-
   // messege-btn
   $('.messege-btn').click(function(){
     if ( $(this).hasClass('changed') ) {
@@ -119,6 +118,16 @@ $(function(){
       $('#sidebar').css('position', 'relative').css('height', 'calc( 100vh - 62px )');
       $('#sidebar ul li:nth-child(4)').css('height', 'calc( 100vh - 595px )');
     }
+  });
+
+  //age btn
+  $('.age12').click(function(){
+    $(this).css('background-color', '#222222').css('color', '#b5b5b5');
+    $('.age18').css('background-color', '#333333').css('color', '#818181');
+  });
+  $('.age18').click(function(){
+    $(this).css('background-color', '#222222').css('color', '#b5b5b5');
+    $('.age12').css('background-color', '#333333').css('color', '#818181');
   });
 
   // sidebar hover 시 border-left 속성 변경
@@ -217,7 +226,5 @@ $(function(){
     $(this).css('background-position-y', '-304px');
     $(this).parent().find('button:nth-of-type(1)').css('background-position-y', '-424px');
   });
-
-
 
 });
