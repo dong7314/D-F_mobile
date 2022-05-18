@@ -58,7 +58,6 @@ $(function(){
     heightRate = lsectionHeight - lmainHeight;
     $('.lgnb-scrollbar .scrollbar').css('height', `calc(${scrollbarRate * 100}% - 10px )`);
     let lmainscrollTop = $('.lgnb-main-wrap').scrollTop();
-    console.log(scrollbarRate);
     $('.lgnb-scrollbar .scrollbar').css('top',  `${5+(lmainscrollTop/heightRate)*(scrollbarHeight*(1-scrollbarRate))}px`);
   });
 
