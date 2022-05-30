@@ -1,7 +1,6 @@
 $(function(){
   // back to top btn
   $(window).scroll(function(){
-    // console.log(this);
     let backToTop = $('.back-to-top');
     if ( $(this).scrollTop() != 0 ) {
       backToTop.addClass('on');
